@@ -2,8 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const ProfileScreen: React.FC = () => {
-  const [userInfo, setUserInfo] = useState<any>(null);
+interface ProfileScreenProps {
+  setUserInfo: React.Dispatch<React.SetStateAction<any>>;
+}
+
+const ProfileScreen: React.FC<ProfileScreenProps> = ({ setUserInfo }) => {
+  const [userInfo, setUserInfoState] = useState<any>(null);
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
 
   useEffect(() => {
@@ -21,6 +25,7 @@ const ProfileScreen: React.FC = () => {
         );
 
         setUserInfo(response.data.result);
+        setUserInfoState(response.data.result)
         console.log(response.data.result);
       } catch (error) {
         console.error("API error:", error);
@@ -29,11 +34,6 @@ const ProfileScreen: React.FC = () => {
 
     fetchUserInfo();
   }, []);
-
-  const handleSignOut = () => {
-    localStorage.removeItem("access_token");
-    window.location.href = "/";
-  };
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files.length > 0) {
@@ -62,6 +62,7 @@ const ProfileScreen: React.FC = () => {
         console.log("Image upload successful");
         console.log(response.data);
         setUserInfo(response.data.result);
+        setUserInfoState(response.data.result);
       } catch (error) {
         console.error("Error uploading image:", error);
       }
@@ -91,8 +92,6 @@ const ProfileScreen: React.FC = () => {
         <p>Gender: {userInfo.patient.gender}</p>
         <p>Date of Birth: {userInfo.patient.dob}</p>
       </div>
-      <Link to="/editprofile">Edit Profile</Link>
-      <button onClick={handleSignOut}>Sign Out</button>
     </div>
   );
 };

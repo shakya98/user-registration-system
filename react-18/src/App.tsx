@@ -13,6 +13,7 @@ function App() {
   const [isAuth, setIsAuth] = useState(
     localStorage.getItem("access_token") ? true : false
   );
+  const [userInfo, setUserInfo] = useState<any>(null);
   console.log(isAuth);
   return (
     <BrowserRouter>
@@ -22,9 +23,9 @@ function App() {
         <Route path="/success" element={<SuccessScreen />} />
         <Route
           path="/"
-          element={<ProtectedRoute isAuth={isAuth} setIsAuth={setIsAuth} />}
+          element={<ProtectedRoute isAuth={isAuth} setIsAuth={setIsAuth} userInfo={userInfo} />}
         >
-          <Route path="/profile" element={<ProfileScreen />} />
+          <Route path="/profile" element={<ProfileScreen setUserInfo={setUserInfo}/>} />
           <Route path="/editprofile" element={<EditProfileScreen />} />
           <Route path="/confirm" element={<ConfirmationScreen />} />
         </Route>

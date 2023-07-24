@@ -4,12 +4,13 @@ import Header from "./Header";
 
 interface Props {
   children: React.ReactNode;
+  userInfo:any;
 }
 
-const Layout: React.FC<Props> = ({ children }) => {
+const Layout: React.FC<Props> = ({ children, userInfo }) => {
   return (
     <>
-      <Header />
+      <Header userInfo={userInfo} />
       <div>
         <div id="page-content-wrapper">{children}</div>
       </div>

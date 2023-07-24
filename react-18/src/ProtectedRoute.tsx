@@ -5,13 +5,14 @@ import Layout from "./components/layout/Layout";
 type Props = RouteProps & {
   isAuth: boolean;
   setIsAuth: React.Dispatch<React.SetStateAction<boolean>>;
+  userInfo: any;
 };
 
-const ProtectedRoute = ({ isAuth, setIsAuth, ...routeProps }: Props) => {
+const ProtectedRoute = ({ isAuth, setIsAuth, userInfo, ...routeProps }: Props) => {
   if (isAuth) {
     setIsAuth(true);
     return (
-      <Layout>
+      <Layout userInfo={userInfo}>
         <Outlet />
       </Layout>
     );
