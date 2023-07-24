@@ -5,6 +5,8 @@ import LoginScreen from "./components/public/login/LoginScreen";
 import SignUpScreen from "./components/public/signup/SignUpScreen";
 import SuccessScreen from "./components/public/SuccessScreen";
 import ProfileScreen from "./components/auth/ProfileScreen";
+import EditProfileScreen from "./components/auth/EditProfileScreen";
+import ConfirmationScreen from "./components/auth/ConfirmationScreen";
 
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
         <Route path="/signup" element={<SignUpScreen />} />
         <Route path="/success" element={<SuccessScreen />} />
         <Route path="/profile" element={<ProfileScreen />} />
+        <Route path="/editprofile" element={<EditProfileScreen />} />
+        <Route path="/confirm" element={<ConfirmationScreen />} />
       </Routes>
     </BrowserRouter>
   );
