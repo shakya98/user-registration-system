@@ -1,5 +1,6 @@
 import React from "react";
 import { Navigate, Outlet, Route, RouteProps } from "react-router-dom";
+import Layout from "./components/layout/Layout";
 
 type Props = RouteProps & {
   isAuth: boolean;
@@ -9,7 +10,11 @@ type Props = RouteProps & {
 const ProtectedRoute = ({ isAuth, setIsAuth, ...routeProps }: Props) => {
   if (isAuth) {
     setIsAuth(true);
-    return <Outlet />;
+    return (
+      <Layout>
+        <Outlet />
+      </Layout>
+    );
   }
   console.log(isAuth);
   return <Navigate to="/" />;
