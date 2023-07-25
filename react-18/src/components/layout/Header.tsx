@@ -41,7 +41,7 @@ const Header: React.FC<Props> = ({ userInfo }) => {
 
             <ul className="navbar-nav d-flex flex-row me-1">
               <li className="nav-item">
-                <a className="nav-link text-color-1 text-2" href="#">
+                <a className="nav-link text-color-1 text-3" href="#">
                   {userInfo.patient.name}
                 </a>
               </li>

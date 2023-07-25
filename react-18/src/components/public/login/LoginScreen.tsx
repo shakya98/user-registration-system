@@ -4,10 +4,8 @@ import LoginForm from './LoginForm';
 
 const LoginScreen: React.FC = () => {
   return (
-    <div>
-      <h1>ABC COMPANY</h1>
+    <div className='bg-color-1 login-main'>
       <LoginForm />
-      <Link to="/signup">Sign Up</Link>
     </div>
   );
 };
