@@ -127,3 +127,7 @@ nav {
   border-radius: 4px !important;
   padding: 1rem 1.5rem !important;
 }
+
+a {
+  text-decoration: none !important;
+}
