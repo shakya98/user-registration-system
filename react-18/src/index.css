@@ -190,3 +190,8 @@ a {
 .radio-row label:hover {
   background: #ddd;
 }
+
+.footer{
+  margin-left: 20%;
+  margin-right: 20%;
+}
