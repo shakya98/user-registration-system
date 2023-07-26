@@ -25,7 +25,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ setUserInfo }) => {
         );
 
         setUserInfo(response.data.result);
-        setUserInfoState(response.data.result)
+        setUserInfoState(response.data.result);
         console.log(response.data.result);
       } catch (error) {
         console.error("API error:", error);
@@ -74,23 +74,73 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ setUserInfo }) => {
   }
 
   return (
-    <div>
-      <div>
-        {userInfo.patient && userInfo.patient.profile_image && (
-          <img src={userInfo.patient.profile_image.resource} alt="User" />
-        )}
-        <input type="file" onChange={handleImageChange} accept="image/*" />
-        <button onClick={handleImageUpload}>Change Image</button>
-      </div>
-      <div>
-        <h2>Welcome</h2>
-        <h3>{userInfo.patient.name}</h3>
-      </div>
-      <div>
-        <p>Email: {userInfo.patient.email}</p>
-        <p>Name: {userInfo.patient.name}</p>
-        <p>Gender: {userInfo.patient.gender}</p>
-        <p>Date of Birth: {userInfo.patient.dob}</p>
+    <div className="bg-color-2 login-main main-height-1">
+      <div className="login-div">
+        <div className="bg-color-2">
+          <div className="row mb-4">
+            <div className="col-md-6 mb-1">
+              {userInfo.patient && userInfo.patient.profile_image && (
+                <img
+                  width="200rem"
+                  height="200rem"
+                  src={userInfo.patient.profile_image.resource}
+                  alt="User"
+                />
+              )}
+              <input
+                className="form-control"
+                type="file"
+                onChange={handleImageChange}
+                accept="image/*"
+              />
+              <button className="form-control bg-color-1 text-color-5" onClick={handleImageUpload}>Change Image</button>
+            </div>
+            <div className="col-md-6 mb-1 align-btm">
+              <h2 className="text-color-3 text-0 login-headings">Welcome</h2>
+              <h3 className="text-color-1 text-1 login-headings">
+                {userInfo.patient.name}
+              </h3>
+            </div>
+          </div>
+          <div>
+            <div className="row">
+              <p className="text-color-3 text-2 col-md-6 mb-1 login-headings">
+                Email:
+              </p>{" "}
+              <p className="text-color-1 text-2 col-md-6 mb-1 right-align">
+                {" "}
+                {userInfo.patient.email}
+              </p>
+            </div>
+            <div className="row">
+              <p className="text-color-3 text-2 col-md-6 mb-1 login-headings">
+                Name:
+              </p>{" "}
+              <p className="text-color-1 text-2 col-md-6 mb-1 right-align">
+                {" "}
+                {userInfo.patient.name}
+              </p>
+            </div>
+            <div className="row">
+              <p className="text-color-3 text-2 col-md-6 mb-1 login-headings">
+                Gender:
+              </p>{" "}
+              <p className="text-color-1 text-2 col-md-6 mb-1 right-align">
+                {" "}
+                {userInfo.patient.gender}
+              </p>
+            </div>
+            <div className="row">
+              <p className="text-color-3 text-2 col-md-6 mb-1 login-headings">
+                Date of Birth:
+              </p>{" "}
+              <p className="text-color-1 text-2 col-md-6 mb-1 right-align">
+                {" "}
+                {userInfo.patient.dob}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

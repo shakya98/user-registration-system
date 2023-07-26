@@ -121,6 +121,11 @@ nav {
   margin-bottom: 1rem;
 }
 
+.right-align {
+  text-align: right !important;
+  margin-bottom: 1rem;
+}
+
 .login-label {
   text-align: left !important;
   float: left !important;
@@ -134,4 +139,8 @@ nav {
 
 a {
   text-decoration: none !important;
+}
+
+.align-btm {
+  align-self: flex-end;
 }
