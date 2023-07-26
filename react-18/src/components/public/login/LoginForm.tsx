@@ -56,6 +56,7 @@ const LoginForm: React.FC = () => {
               id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              required
             />
           </div>
 
@@ -72,6 +73,7 @@ const LoginForm: React.FC = () => {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
           </div>
 

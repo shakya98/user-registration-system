@@ -80,6 +80,7 @@ const SignUpForm: React.FC = () => {
                   id="firstName"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
+                  required
                 />
               </div>
             </div>
@@ -97,6 +98,7 @@ const SignUpForm: React.FC = () => {
                   id="lastName"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
+                  required
                 />
               </div>
             </div>
@@ -115,6 +117,7 @@ const SignUpForm: React.FC = () => {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
 
@@ -131,6 +134,7 @@ const SignUpForm: React.FC = () => {
               id="mobileNumber"
               value={mobileNumber}
               onChange={(e) => setMobileNumber(e.target.value)}
+              required
             />
           </div>
 
@@ -147,6 +151,7 @@ const SignUpForm: React.FC = () => {
               id="dateOfBirth"
               value={dateOfBirth}
               onChange={(e) => setDateOfBirth(e.target.value)}
+              required
             />
           </div>
 
@@ -163,6 +168,7 @@ const SignUpForm: React.FC = () => {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
           </div>
 
@@ -179,6 +185,7 @@ const SignUpForm: React.FC = () => {
               id="confirmPassword"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
+              required
             />
           </div>
 
