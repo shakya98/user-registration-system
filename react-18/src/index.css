@@ -32,8 +32,8 @@ nav {
   background-color: #d9d9d9 !important;
 }
 
-.main-height-1{
-  height: 100vh!important;
+.main-height-1 {
+  height: 100vh !important;
 }
 
 .bg-color-1 {
@@ -143,4 +143,50 @@ a {
 
 .align-btm {
   align-self: flex-end;
+}
+
+.radio-row {
+  list-style-type: none;  
+}
+
+.radio-row-inner {
+  float: left;  
+  height: 2.5rem;
+  position: relative;
+}
+
+.radio-row label,
+.radio-row input {
+  margin: 0 1rem 0 1rem!important;
+  border: 0.15rem solid #d9d9d9 !important;
+  color: #7c7979 !important;
+  border-radius: 4px !important;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.radio-row input[type="radio"] {
+  opacity: 0.01;
+  z-index: 100;
+}
+
+.radio-row input[type="radio"]:checked + label,
+.Checked + label {
+  border: 0.15rem solid #205387 !important;
+  color: #205387 !important;
+  border-radius: 4px !important;
+}
+
+.radio-row label {
+  padding: 0.3rem;
+  cursor: pointer;
+  z-index: 90;
+}
+
+.radio-row label:hover {
+  background: #ddd;
 }

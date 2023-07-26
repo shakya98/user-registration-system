@@ -63,7 +63,7 @@ const EditProfileForm: React.FC = () => {
       );
 
       window.location.href = "/confirm";
-      console.log(response.data)
+      console.log(response.data);
     } catch (error) {
       console.error("API error:", error);
     }
@@ -74,81 +74,133 @@ const EditProfileForm: React.FC = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="firstName">First Name:</label>
-        <input
-          type="text"
-          id="firstName"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
+    <div className="bg-color-2 login-main main-height-1">
+      <div className="login-div">
+        <h2 className="text-color-3 text-0 mb-4">Edit Profile</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="row">
+            <div className="col-md-6 mb-1">
+              <div className="form-outline mb-1">
+                <label
+                  className="form-label text-color-3 text-2 login-label"
+                  htmlFor="firstName"
+                >
+                  First Name:
+                </label>
+                <input
+                  className="form-control login-input"
+                  type="text"
+                  id="firstName"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="col-md-6 mb-1">
+              <div className="form-outline mb-1">
+                <label
+                  className="form-label text-color-3 text-2 login-label"
+                  htmlFor="lastName"
+                >
+                  Last Name:
+                </label>
+                <input
+                  className="form-control login-input"
+                  type="text"
+                  id="lastName"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <label
+              className="form-label text-color-3 text-2 login-label"
+              htmlFor="email"
+            >
+              Email:
+            </label>
+            <input
+              className="form-control login-input"
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div>
+            <label
+              className="form-label text-color-3 text-2 login-label"
+              htmlFor="dateOfBirth"
+            >
+              Date of Birth:
+            </label>
+            <input
+              className="form-control login-input"
+              type="date"
+              id="dateOfBirth"
+              value={dateOfBirth}
+              onChange={(e) => setDateOfBirth(e.target.value)}
+            />
+          </div>
+          <div className="row">
+            <label className="form-label text-color-3 text-2 login-label">
+              Gender:
+            </label>
+          </div>
+          <div>
+            <div className="row radio-row">
+              <div className="col-md-4 mb-1 radio-row-inner">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  id="male"
+                  name="gender"
+                  value="male"
+                  checked={gender === "male"}
+                  onChange={() => setGender("male")}
+                />
+                <label className="form-check-label" htmlFor="male">
+                  Male
+                </label>
+              </div>
+              <div className="col-md-4 mb-1 donate-now-inn">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  id="female"
+                  name="gender"
+                  value="female"
+                  checked={gender === "female"}
+                  onChange={() => setGender("female")}
+                />
+                <label className="form-check-label" htmlFor="female">
+                  Female
+                </label>
+              </div>
+              <div className="col-md-4 mb-1 donate-now-inn">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  id="other"
+                  name="gender"
+                  value="other"
+                  checked={gender === "other"}
+                  onChange={() => setGender("other")}
+                />
+                <label className="form-check-label" htmlFor="other">
+                  Other
+                </label>
+              </div>
+            </div>
+          </div>
+          <button className="btn btn-primary block mb-1 text-2" type="submit">
+            Save Changes
+          </button>
+        </form>
       </div>
-      <div>
-        <label htmlFor="lastName">Last Name:</label>
-        <input
-          type="text"
-          id="lastName"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="dateOfBirth">Date of Birth:</label>
-        <input
-          type="date"
-          id="dateOfBirth"
-          value={dateOfBirth}
-          onChange={(e) => setDateOfBirth(e.target.value)}
-        />
-      </div>
-      <div>
-        <label>Gender:</label>
-        <div>
-          <input
-            type="radio"
-            id="male"
-            name="gender"
-            value="male"
-            checked={gender === "male"}
-            onChange={() => setGender("male")}
-          />
-          <label htmlFor="male">Male</label>
-        </div>
-        <div>
-          <input
-            type="radio"
-            id="female"
-            name="gender"
-            value="female"
-            checked={gender === "female"}
-            onChange={() => setGender("female")}
-          />
-          <label htmlFor="female">Female</label>
-        </div>
-        <div>
-          <input
-            type="radio"
-            id="other"
-            name="gender"
-            value="other"
-            checked={gender === "other"}
-            onChange={() => setGender("other")}
-          />
-          <label htmlFor="other">Other</label>
-        </div>
-      </div>
-      <button type="submit">Save Changes</button>
-    </form>
+    </div>
   );
 };
 
